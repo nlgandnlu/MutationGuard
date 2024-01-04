@@ -9,6 +9,6 @@ The optimal results on the validation set and testing set will be automatically 
 ### Run on open dataset
 1. Data Preparation: Firstly, place the files from https://pan.baidu.com/s/1syw-9lN5rU7q8iioaj66WA (提取码: Sich) into Mutation_Experiment\src\models\GNNs\Shannxi_Graph\raw\
 
-(The results will be saved in the WandB project, and you need to log in to the website to view them. We trained for 20 epochs on the public dataset and directly tested the model after training (following the previous work).)：
+(The results will be saved in the WandB project, and you need to log in to the website to view them. We trained for 20 epochs on the public dataset and directly tested the model after training (following the previous work)：
 
 python Ours_open.py --mode 06
