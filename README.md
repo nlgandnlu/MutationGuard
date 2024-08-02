@@ -1,3 +1,5 @@
+### For the convenience of review, we have directly attached the datasets and codes in the additional materials submitted.
+
 ### Run on our dataset：
 
 1. Data Preparation: Firstly, place the files from https://pan.baidu.com/s/1UiNvhFL9ybp2CrASSrQLyQ (提取码: Shan) into Mutation_Experiment\src\models\GNNs\Shannxi_Graph\raw\
