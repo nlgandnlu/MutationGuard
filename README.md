@@ -1,4 +1,4 @@
-### For the convenience of review, we have directly attached the datasets and codes in the additional materials submitted.
+### For the convenience of review, we have directly attached the datasets and codes in the 'Supplementary Material'.
 
 ### Run on our dataset：
 
