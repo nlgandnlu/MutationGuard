@@ -1,4 +1,4 @@
-### For the convenience of review, we have directly attached the datasets and codes in the 'Supplementary Material'.
+### For the convenience of review, we have directly saved the proposed dataset MutationTeleFraud in Shannxi_Graph\raw\.
 
 ### Run on our dataset：
 
