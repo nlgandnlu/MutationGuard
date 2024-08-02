@@ -1,4 +1,4 @@
-### For the convenience of review, we have directly saved the proposed dataset MutationTeleFraud in Shannxi_Graph\raw\.
+### For the convenience of review, we have directly saved the proposed dataset MutationTeleFraud in Shannxi_Graph\raw\. (Except for normal users' VOC records, it cannot be uploaded due to its large size.)
 
 ### Run on our dataset：
 
