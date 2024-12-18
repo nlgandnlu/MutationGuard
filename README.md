@@ -14,3 +14,8 @@ The optimal results on the validation set and testing set will be automatically 
 (The results will be saved in the WandB project, and you need to log in to the website to view them. We trained for 20 epochs on the public dataset and directly tested the model after training (following the previous work)：
 
 python Ours_open.py --mode 06
+
+### Run GAT-COBO(IEEE Transactions on Big Data)
+
+We tested it on two datasets based on open-source code (https://github.com/xxhu94/GAT-COBO).
+
