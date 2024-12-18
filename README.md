@@ -15,7 +15,11 @@ The optimal results on the validation set and testing set will be automatically 
 
 python Ours_open.py --mode 06
 
-### Run GAT-COBO(IEEE Transactions on Big Data)
+### Run GAT-COBO (IEEE Transactions on Big Data)
 
-We tested it on two datasets based on open-source code (https://github.com/xxhu94/GAT-COBO).
+We tested it on two datasets based on open-source code (https://github.com/xxhu94/GAT-COBO). Need a new environment to run (The original codebase did not provide explicit dependency files. After testing, we found that the following versions are compatible and can run successfully.)：torch=2.0.0, torchdata=0.6.0, python=3.11.3,  pip install dgl==1.0.1+cu117 -f https://data.dgl.ai/wheels/cu117/repo.html
+
+cd GAT-COBO
+
+python main.py
 
