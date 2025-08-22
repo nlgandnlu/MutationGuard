@@ -14,7 +14,7 @@ from torch.nn import BatchNorm1d
 import sys
 from sklearn.svm import SVC
 from sklearn.preprocessing import MinMaxScaler
-sys.path.append("/home/baihaitao/CDR2IMG/")
+sys.path.append("/xxx/xxx/CDR2IMG/")
 from src.models.GNNs.Shannxi_Datasets import Graph_Dataset3
 from torch.optim import lr_scheduler
 import random
@@ -443,5 +443,6 @@ dic.update(fruad_step(epoch,X_fraud, y_fraud))
 dic['model_name']='svm_rbf'
 
 save_csv(dic)
+
 
 
