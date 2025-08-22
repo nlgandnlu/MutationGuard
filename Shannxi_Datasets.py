@@ -262,7 +262,7 @@ class Graph_Dataset2(Dataset):
     def cylindrical_to_cartesian(self, r, theta, h):
         x = r * math.cos(theta)
         y = r * math.sin(theta)
-        z = h
+        z = h + theta/(2*math.pi)
         return x, y, z
     def cacu_time(self,df):
         z = (datetime.datetime(int(df['year']), int(df['month']), int(df['day']))-self.start_date).days
@@ -668,7 +668,7 @@ class Graph_Dataset3(Dataset):
     def cylindrical_to_cartesian(self, r, theta, h):
         x = r * math.cos(theta)
         y = r * math.sin(theta)
-        z = h
+        z = h + theta/(2*math.pi)
         return x, y, z
     def cacu_time(self,df):
         z = (datetime.datetime(int(df['year']), int(df['month']), int(df['day']))-self.start_date).days
@@ -1066,7 +1066,7 @@ class Graph_Dataset6(Dataset):
     def cylindrical_to_cartesian(self, r, theta, h):
         x = r * math.cos(theta)
         y = r * math.sin(theta)
-        z = h
+        z = h + theta/(2*math.pi)
         return x, y, z
     def cacu_time(self,df):
         z = (datetime.datetime(int(df['year']), int(df['month']), int(df['day']))-self.start_date).days
@@ -1486,7 +1486,7 @@ class Graph_Dataset8(Dataset):
     def cylindrical_to_cartesian(self, r, theta, h):
         x = r * math.cos(theta)
         y = r * math.sin(theta)
-        z = h
+        z = h + theta/(2*math.pi)
         return x, y, z
     def cacu_time(self,df):
         z = (datetime.datetime(int(df['year']), int(df['month']), int(df['day']))-self.start_date).days
@@ -2098,7 +2098,7 @@ class Graph_Dataset9(Dataset):
     def cylindrical_to_cartesian(self, r, theta, h):
         x = r * math.cos(theta)
         y = r * math.sin(theta)
-        z = h
+        z = h + theta/(2*math.pi)
         return x, y, z
     def cacu_time(self,df):
         z = (datetime.datetime(int(df['year']), int(df['month']), int(df['day']))-self.start_date).days
@@ -2272,4 +2272,5 @@ class Graph_Dataset9(Dataset):
             data.x=None
             data.voc_attr=data.voc_attr.unsqueeze(0).unsqueeze(0)
         
+
         return data
