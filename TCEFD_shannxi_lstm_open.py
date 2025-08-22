@@ -11,7 +11,7 @@ import torch_geometric.transforms as T
 from torch_geometric.nn import MLP, PointNetConv, fps, radius
 from torch_geometric.nn import global_max_pool
 import sys
-sys.path.append("/home/baihaitao/CDR2IMG/")
+sys.path.append("/xxx/xxx/CDR2IMG/")
 from src.models.GNNs.Shannxi_Datasets import Graph_Dataset5
 from torch.optim import lr_scheduler
 import random
@@ -375,5 +375,6 @@ for epoch in range(1, config.epochs + 1):
 wandb.log({"Evaluation": table})
 
 wandb.finish()
+
 
 
