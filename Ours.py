@@ -502,7 +502,7 @@ args = parser.parse_args()
 model_name="experiment/ours"
 args.wandb_run_name=model_name+'_bs_'+str(args.batch_size)+'_epo_'+str(args.epochs)+'_lr_'+str(args.learning_rate)+'_hf_'+str(args.hide_features)+'_of_'+str(args.out_features)
 cuda_device=args.device
-#  点云代码！！！！！！！！！！！！！
+
 wandb_project = args.wandb_project #@param {"type": "string"}
 wandb_run_name = args.wandb_run_name #@param {"type": "string"}
 
@@ -526,10 +526,10 @@ config.num_workers = 6 #@param {type:"slider", min:1, max:10, step:1}
 config.device = torch.device('cuda',cuda_device)
 device = torch.device(config.device)
 
-config.set_abstraction_ratio_1 = 0.748 #@param {type:"slider", min:0.1, max:1.0, step:0.01}
-config.set_abstraction_radius_1 = 0.4817 #@param {type:"slider", min:0.1, max:1.0, step:0.01}
-config.set_abstraction_ratio_2 = 0.3316 #@param {type:"slider", min:0.1, max:1.0, step:0.01}
-config.set_abstraction_radius_2 = 0.2447 #@param {type:"slider", min:0.1, max:1.0, step:0.01}
+config.set_abstraction_ratio_1 = 0.7 
+config.set_abstraction_radius_1 = 0.5
+config.set_abstraction_ratio_2 = 0.3
+config.set_abstraction_radius_2 = 0.2
 config.dropout = 0.1 #@param {type:"slider", min:0.1, max:1.0, step:0.1}
 # # 定义gat超参数
 config.num_features = 23
@@ -690,5 +690,6 @@ wandb.finish()
 #保存到本地最优数据
 best_test['model_name']=model_name
 save_csv(best_test)
+
 
 
