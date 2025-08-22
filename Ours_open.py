@@ -11,7 +11,7 @@ import torch_geometric.transforms as T
 from torch_geometric.nn import MLP, PointNetConv, fps, radius
 from torch_geometric.nn import global_max_pool
 import sys
-sys.path.append("/home/baihaitao/CDR2IMG/")
+sys.path.append("/xxx/xxx/CDR2IMG/")
 from src.models.GNNs.Shannxi_Datasets import Graph_Dataset6
 from torch.optim import lr_scheduler
 import random
@@ -24,7 +24,7 @@ import argparse
 from sklearn.metrics import f1_score, roc_auc_score, accuracy_score
 from torch.nn import BatchNorm1d
 from sklearn.preprocessing import MinMaxScaler
-WANDB_API_KEY='fedffa5b3f899e144fb04d02d36abf5f79d2c4a2'
+WANDB_API_KEY='xxx'
 WANDB_CACHE_DIR='./cache'
 WANDB_CONFIG_DIR='./config'
 WANDB_DIR='./wandb'
@@ -387,7 +387,7 @@ parser.add_argument('--best_metric', type=str, default='auc', help='选择根据
 parser.add_argument('--device', type=int, default=0, help='选择训练的gpu')
 args = parser.parse_args()
 args.wandb_run_name="experiment/tccnn_difflr_feedpointnetbn_open"+'_bs_'+str(args.batch_size)+'_epo_'+str(args.epochs)+'_lr_'+str(args.learning_rate)+'_hf_'+str(args.hide_features)+'_of_'+str(args.out_features)+'_mode_'+str(args.mode)
-#  点云代码！！！！！！！！！！！！！
+
 wandb_project = args.wandb_project #@param {"type": "string"}
 wandb_run_name = args.wandb_run_name #@param {"type": "string"}
 cuda_device=args.device
@@ -395,33 +395,31 @@ wandb.init(project=wandb_project, name=wandb_run_name, job_type="baseline-train"
 
 # # Set experiment configs to be synced with wandb
 config = wandb.config
-#config.modelnet_dataset_alias = "ModelNet10" #@param ["ModelNet10", "ModelNet40"] {type:"raw"}
+
 
 config.seed = 4242 #@param {type:"number"}
 random.seed(config.seed)
 torch.manual_seed(config.seed)
 
-config.sample_points = 2048 #@param {type:"slider", min:256, max:4096, step:16}
+config.sample_points = 2048
 
 config.categories = ['non_fruad','fruad']
 
-config.batch_size = args.batch_size #@param {type:"slider", min:4, max:128, step:4}
-config.num_workers = 6 #@param {type:"slider", min:1, max:10, step:1}
+config.batch_size = args.batch_size
+config.num_workers = 6
 
 config.device = torch.device('cuda',cuda_device)
 device = torch.device(config.device)
 
-config.set_abstraction_ratio_1 = 0.748 #@param {type:"slider", min:0.1, max:1.0, step:0.01}
-config.set_abstraction_radius_1 = 0.4817 #@param {type:"slider", min:0.1, max:1.0, step:0.01}
-config.set_abstraction_ratio_2 = 0.3316 #@param {type:"slider", min:0.1, max:1.0, step:0.01}
-config.set_abstraction_radius_2 = 0.2447 #@param {type:"slider", min:0.1, max:1.0, step:0.01}
-config.dropout = 0.1 #@param {type:"slider", min:0.1, max:1.0, step:0.1}
+config.set_abstraction_ratio_1 = 0.7
+config.set_abstraction_radius_1 = 0.5
+config.set_abstraction_ratio_2 = 0.3
+config.set_abstraction_radius_2 = 0.2
+config.dropout = 0.1
 # # 定义gat超参数
-#config.num_features = 33
 config.num_features = 29
 config.hide_features = args.hide_features
 config.out_features = args.out_features
-#config.out_features = 2
 config.num_heads = 8
 
 
@@ -540,5 +538,6 @@ for epoch in range(1, config.epochs + 1):
 wandb.log({"Evaluation": table})
 
 wandb.finish()
+
 
 
