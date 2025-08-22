@@ -11,7 +11,7 @@ import torch_geometric.transforms as T
 from torch_geometric.nn import MLP, PointNetConv, fps, radius
 from torch_geometric.nn import global_max_pool
 import sys
-sys.path.append("/home/baihaitao/CDR2IMG/")
+sys.path.append("/xxx/xxx/CDR2IMG/")
 from src.models.GNNs.Shannxi_Datasets import Graph_Dataset2
 from torch.optim import lr_scheduler
 import random
@@ -23,7 +23,7 @@ import os.path as osp
 import argparse
 from sklearn.metrics import f1_score, roc_auc_score, accuracy_score
 from torch.nn import BatchNorm1d
-WANDB_API_KEY='fedffa5b3f899e144fb04d02d36abf5f79d2c4a2'
+WANDB_API_KEY='xxx'
 WANDB_CACHE_DIR='./cache'
 WANDB_CONFIG_DIR='./config'
 WANDB_DIR='./wandb'
@@ -611,5 +611,6 @@ wandb.finish()
 #保存到本地最优数据
 best_test['model_name']=model_name
 save_csv(best_test)
+
 
 
