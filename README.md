@@ -24,3 +24,4 @@ cd GAT-COBO
 
 python main.py
 
+If you have any questions, please feel free to contact by email: haitao.bai@stu.xjtu.edu.cn
